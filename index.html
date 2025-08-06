@@ -1,105 +1,126 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nossas Memórias</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Retrospectiva do Nosso Amor 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #111, #1a1a1a);
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+
+    section {
+      flex: 0 0 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      animation: fadeIn 1s ease-in;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .counter {
+      font-size: 2rem;
+      color: #1db954;
+    }
+
+    .moment img {
+      max-width: 80%;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer {
+      font-size: 0.8rem;
+      margin-top: 2rem;
+      opacity: 0.5;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Nossas Memórias</h1>
-    <p>Estamos juntos há <span id="main-counter"></span></p>
-  </header>
-
-  <main>
-    <section class="timeline" id="momentos">
-      <h2>Momentos Especiais</h2>
-      <div class="momentos-container" id="momentos-container"></div>
+  <div class="container">
+    <!-- Slide 1 -->
+    <section style="background-color: #1db954;">
+      <h1 style="color: #000;">Retrospectiva do Nosso Amor 💖</h1>
+      <h2 style="color: #000;">Desde o nosso primeiro dia juntos</h2>
+      <div class="counter" id="daysCounter">Contando...</div>
     </section>
 
-    <section class="galeria" id="galeria">
-      <h2>Galeria de Fotos</h2>
-      <div class="fotos">
-        <img src="img1.jpg" alt="Foto 1">
-        <img src="img2.jpg" alt="Foto 2">
-      </div>
+    <!-- Slide 2 -->
+    <section>
+      <h2>Começou em 18/10/2024</h2>
+      <p>O dia que mudou tudo. Nosso primeiro “oi” virou história.</p>
     </section>
 
-    <section class="cartas" id="cartas">
-      <h2>Cartas de Amor</h2>
-      <div class="carta">
-        <p>Meu amor, cada dia ao seu lado é um presente. Obrigado por tudo. Te amo!</p>
-      </div>
+    <!-- Slide 3 -->
+    <section class="moment">
+      <img src="https://via.placeholder.com/300x400.png?text=Foto+1" alt="Momento 1">
+      <h2>Nosso primeiro beijo 💋</h2>
+      <p>Um momento mágico que ficou guardado pra sempre.</p>
     </section>
 
-    <section class="playlist" id="playlist">
-      <h2>Nosso Som</h2>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/SEU_PLAYLIST_ID_AQUI" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <!-- Slide 4 -->
+    <section class="moment">
+      <img src="https://via.placeholder.com/300x400.png?text=Foto+2" alt="Momento 2">
+      <h2>Aquela viagem inesquecível 🌅</h2>
+      <p>Risos, fotos e lembranças eternas.</p>
     </section>
-  </main>
+
+    <!-- Slide 5 -->
+    <section>
+      <h2>Estamos só começando...</h2>
+      <p>O melhor ainda está por vir. Te amo! 💞</p>
+    </section>
+
+    <!-- Slide Final -->
+    <section style="background-color: #1db954;">
+      <h2 style="color: #000;">Feito com amor 💖</h2>
+      <div class="footer">Por [Seu Nome] – 2025</div>
+    </section>
+  </div>
 
   <script>
-    AOS.init();
-
+    // Contador de dias desde o início do namoro
     const startDate = new Date("2024-10-18");
-    const mainCounter = document.getElementById("main-counter");
+    const counterEl = document.getElementById("daysCounter");
 
-    function formatDuration(ms) {
-      const days = Math.floor(ms / (1000 * 60 * 60 * 24));
-      const months = Math.floor(days / 30);
-      const remainingDays = days % 30;
-      return `${months} meses e ${remainingDays} dias`;
-    }
-
-    function updateMainCounter() {
+    function updateCounter() {
       const now = new Date();
-      const diff = now - startDate;
-      mainCounter.textContent = formatDuration(diff);
+      const diffTime = now - startDate;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      counterEl.textContent = `${diffDays} dias de amor 💘`;
     }
 
-    function addMoments() {
-      const momentos = [
-        { titulo: "Primeiro Beijo", data: "2024-10-25", descricao: "Nosso primeiro beijo sob as estrelas." },
-        { titulo: "Primeiro Encontro", data: "2024-10-18", descricao: "O dia em que tudo começou." },
-        { titulo: "Primeira Viagem", data: "2024-11-20", descricao: "Fomos explorar novos lugares juntos." },
-        { titulo: "Natal Juntos", data: "2024-12-25", descricao: "Nosso primeiro Natal juntinhos." },
-        { titulo: "Ano Novo", data: "2025-01-01", descricao: "Recebemos o ano com muito amor." },
-        { titulo: "Primeira Briga", data: "2025-01-15", descricao: "Aprendemos a superar juntos." },
-        { titulo: "Volta por Cima", data: "2025-01-20", descricao: "Ficamos ainda mais fortes." },
-        { titulo: "Surpresa Romântica", data: "2025-02-14", descricao: "Um dia cheio de amor e carinho." },
-        { titulo: "Aniversário dela", data: "2025-03-08", descricao: "Comemoramos de forma especial." },
-        { titulo: "Aniversário dele", data: "2025-05-05", descricao: "Com direito a muitos beijos e bolo." },
-        { titulo: "Pedido Especial", data: "2025-06-12", descricao: "Mais um passo importante na nossa história." },
-        { titulo: "Viagem dos Sonhos", data: "2025-07-10", descricao: "Realizamos um sonho juntos." }
-      ];
-
-      const container = document.getElementById("momentos-container");
-      const now = new Date();
-
-      momentos.forEach((m) => {
-        const momentoDate = new Date(m.data);
-        const diff = now - momentoDate;
-        const tempo = formatDuration(diff);
-
-        const div = document.createElement("div");
-        div.className = "momento";
-        div.setAttribute("data-aos", "fade-up");
-        div.innerHTML = `
-          <h3>${m.titulo}</h3>
-          <p><strong>${tempo} atrás</strong> - ${m.descricao}</p>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    updateMainCounter();
-    addMoments();
+    updateCounter();
   </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
