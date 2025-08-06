@@ -2,217 +2,42 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Retrospectiva do Amor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: black;
-      color: white;
-      overflow: hidden;
-    }
-
-    .slide-container {
-      display: flex;
-      flex-direction: row;
-      width: 100vw;
-      height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .slide {
-      min-width: 100vw;
-      height: 100vh;
-      flex-shrink: 0;
-      background-size: cover;
-      background-position: center;
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .top-text {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .top-text h3 {
-      font-size: 1rem;
-      letter-spacing: 1px;
-      opacity: 0.8;
-    }
-
-    .top-text h1 {
-      font-size: 1.8rem;
-      margin-top: 0.5rem;
-    }
-
-    .card {
-      background: #a855f7;
-      color: black;
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-      z-index: 10;
-      width: 80%;
-    }
-
-    .zigzag {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-image: repeating-linear-gradient(
-        135deg,
-        transparent,
-        transparent 10px,
-        black 10px,
-        black 20px
-      );
-      opacity: 0.3;
-      border-radius: 20px;
-      z-index: 0;
-    }
-
-    .card-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .card h2 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .btn {
-      padding: 1rem 2rem;
-      border: none;
-      background-color: #f5d0fe;
-      color: black;
-      font-weight: bold;
-      font-size: 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      margin-bottom: 2rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retrospectiva de Namoro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+  <audio id="bg-music" autoplay loop>
+    <source src="assets/musica.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
-  <div class="slide-container" id="slides">
-    <!-- Slide 1 -->
-    <div class="slide" style="background-image: url('https://i.imgur.com/9eXDUfW.png')">
-      <div class="top-text">
-        <h3>2 ANOS JUNTOS</h3>
-        <h1>Tempo Suficiente Para</h1>
-      </div>
+  <main id="slides">
+    <section class="slide active" id="slide1">
+      <h1>Maria Eduarda ❤️ Victor</h1>
+      <p>Uma história de amor começou...</p>
+    </section>
 
-      <div class="card">
-        <div class="zigzag"></div>
-        <div class="card-content">
-          <p style="font-size: 0.9rem; opacity: 0.8;">PASSAGEM DO TEMPO</p>
-          <h2 id="days">...</h2>
-          <p>amanheceres<br>compartilhados</p>
-        </div>
-      </div>
+    <section class="slide" id="slide2">
+      <h2>18 de Outubro de 2024</h2>
+      <p>O dia em que tudo mudou...</p>
+    </section>
 
-      <button class="btn" onclick="nextSlide()">CONTINUAR</button>
-    </div>
+    <section class="slide" id="slide3">
+      <h2>Desde então...</h2>
+      <p>Foram muitos momentos especiais juntos 💑</p>
+    </section>
 
-    <!-- Slide 2 -->
-    <div class="slide" style="background-image: url('https://i.imgur.com/mUj56K1.png')">
-      <div class="top-text">
-        <h3>NOSSA PRIMEIRA FOTO</h3>
-        <h1>Início de Uma História</h1>
-      </div>
+    <section class="slide" id="slide4">
+      <h2>Essa é só a primeira parte...</h2>
+      <p>O melhor ainda está por vir!</p>
+    </section>
 
-      <div class="card">
-        <div class="zigzag"></div>
-        <div class="card-content">
-          <h2>2024</h2>
-          <p>Um clique, um começo 💞</p>
-        </div>
-      </div>
+    <section class="slide" id="slide5">
+      <h2>Te amo, Maria Eduarda! 💖</h2>
+    </section>
+  </main>
 
-      <button class="btn" onclick="nextSlide()">CONTINUAR</button>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="slide" style="background-image: url('https://i.imgur.com/OfyixxE.png')">
-      <div class="top-text">
-        <h3>E O FUTURO?</h3>
-        <h1>Estamos Apenas Começando</h1>
-      </div>
-
-      <div class="card">
-        <div class="zigzag"></div>
-        <div class="card-content">
-          <h2>∞</h2>
-          <p>O melhor ainda está por vir ✨</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Dias de namoro
-    const startDate = new Date("2024-10-18");
-    const now = new Date();
-    const diffTime = now - startDate;
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    document.getElementById("days").innerText = diffDays;
-
-    // Slides
-    const container = document.getElementById("slides");
-    let currentIndex = 0;
-    const totalSlides = container.children.length;
-
-    function nextSlide() {
-      if (currentIndex < totalSlides - 1) {
-        currentIndex++;
-        container.scrollTo({ left: currentIndex * window.innerWidth, behavior: 'smooth' });
-      }
-    }
-
-    // Carrossel automático
-    setInterval(() => {
-      nextSlide();
-    }, 7000); // 7 segundos
-
-    // Swipe para mobile
-    let startX = 0;
-    container.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
-    container.addEventListener("touchend", (e) => {
-      const endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) nextSlide();
-      if (endX - startX > 50 && currentIndex > 0) {
-        currentIndex--;
-        container.scrollTo({ left: currentIndex * window.innerWidth, behavior: 'smooth' });
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
