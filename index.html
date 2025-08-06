@@ -16,37 +16,34 @@
     <p>Estamos juntos há <span id="main-counter"></span></p>
   </header>
 
-  <section class="timeline" id="momentos">
-    <h2>Momentos Especiais</h2>
-    <div class="momentos-container" id="momentos-container">
-      <!-- Momentos inseridos via JavaScript -->
-    </div>
-  </section>
+  <main>
+    <section class="timeline" id="momentos">
+      <h2>Momentos Especiais</h2>
+      <div class="momentos-container" id="momentos-container"></div>
+    </section>
 
-  <section class="galeria" id="galeria">
-    <h2>Galeria de Fotos</h2>
-    <div class="fotos">
-      <!-- Coloque suas imagens aqui -->
-      <img src="img1.jpg" alt="Foto 1">
-      <img src="img2.jpg" alt="Foto 2">
-    </div>
-  </section>
+    <section class="galeria" id="galeria">
+      <h2>Galeria de Fotos</h2>
+      <div class="fotos">
+        <img src="img1.jpg" alt="Foto 1">
+        <img src="img2.jpg" alt="Foto 2">
+      </div>
+    </section>
 
-  <section class="cartas" id="cartas">
-    <h2>Cartas de Amor</h2>
-    <div class="carta">
-      <p>Meu amor, cada dia ao seu lado é um presente. Obrigado por tudo. Te amo!</p>
-    </div>
-  </section>
+    <section class="cartas" id="cartas">
+      <h2>Cartas de Amor</h2>
+      <div class="carta">
+        <p>Meu amor, cada dia ao seu lado é um presente. Obrigado por tudo. Te amo!</p>
+      </div>
+    </section>
 
-  <section class="playlist" id="playlist">
-    <h2>Nosso Som</h2>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/SEU_PLAYLIST_ID_AQUI" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </section>
+    <section class="playlist" id="playlist">
+      <h2>Nosso Som</h2>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/SEU_PLAYLIST_ID_AQUI" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+  </main>
 
   <script>
-    // script.js
-
     AOS.init();
 
     const startDate = new Date("2024-10-18");
@@ -84,7 +81,7 @@
       const container = document.getElementById("momentos-container");
       const now = new Date();
 
-      momentos.forEach((m, index) => {
+      momentos.forEach((m) => {
         const momentoDate = new Date(m.data);
         const diff = now - momentoDate;
         const tempo = formatDuration(diff);
