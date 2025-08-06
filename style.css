@@ -5,17 +5,21 @@ body {
   background-color: #fff0f5;
   color: #333;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2 {
   font-family: 'Dancing Script', cursive;
   color: #c2185b;
   text-align: center;
+  margin: 0;
+  padding: 0.5em;
 }
 
 header {
   background: linear-gradient(to right, #f8bbd0, #f48fb1);
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
   color: white;
 }
@@ -25,78 +29,63 @@ header {
   font-size: 1.2rem;
 }
 
-.timeline {
-  padding: 40px 20px;
-  background-color: #ffffff;
+.timeline,
+.galeria,
+.cartas,
+.playlist {
+  padding: 20px 15px;
 }
 
 .momentos-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  max-width: 800px;
+  gap: 20px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .momento {
   background: #ffe4ec;
   border-left: 5px solid #ec407a;
-  padding: 20px;
+  padding: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.momento:hover {
-  transform: scale(1.02);
 }
 
 .momento h3 {
   margin-top: 0;
   color: #ad1457;
+  font-size: 1.1rem;
 }
 
 .momento p {
   margin-bottom: 0;
-}
-
-.galeria {
-  background: #fce4ec;
-  padding: 40px 20px;
-  text-align: center;
+  font-size: 0.95rem;
 }
 
 .fotos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
   margin-top: 20px;
 }
 
 .fotos img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.fotos img:hover {
-  transform: scale(1.05);
-}
-
-.cartas {
-  padding: 40px 20px;
-  background-color: #fff5f8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 .carta {
-  max-width: 700px;
-  margin: 0 auto;
   background: #fff;
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   font-style: italic;
+  max-width: 600px;
+  margin: auto;
   position: relative;
 }
 
@@ -110,25 +99,23 @@ header {
   font-family: 'Dancing Script', cursive;
 }
 
-.playlist {
-  padding: 40px 20px;
-  background: #f8bbd0;
-  text-align: center;
-}
-
 iframe {
-  border: none;
-  max-width: 600px;
   width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: none;
   border-radius: 12px;
+  margin: auto;
+  display: block;
 }
 
-@media screen and (max-width: 600px) {
-  h1, h2 {
-    font-size: 1.8rem;
+@media (min-width: 768px) {
+  .momentos-container {
+    max-width: 800px;
   }
-  .carta {
-    padding: 15px;
+
+  .fotos {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
